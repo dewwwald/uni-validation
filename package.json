@@ -1,0 +1,11 @@
+{
+  "name": "uni-valid",
+  "version": "0.0.0-alpha",
+  "description": "Universal form validation that leverages the power of Observables (think async server side password strength checker)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MVC"
+}
