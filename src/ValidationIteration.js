@@ -17,7 +17,7 @@ export class ValidationIteration {
         this.validationResult = new ValidationResult();
     }
 
-    handler = (response) => {
+    handler(response) {
         if (response) {
             this.validationResult.errors = [
                 ...this.validationResult.errors,
@@ -33,10 +33,10 @@ export class ValidationIteration {
     doValidate() {
         this.validators.forEach(validator => { 
             const value = validator.doValidation();
-            if (value.constructor.name === 'Promise') {
-                value.then(this.handler);
-            } else if (value.constructor.name === 'Observable') {
-                value.subscribe(this.handler);
+            if (value && value.constructor.name === 'Promise') {
+                value.then(this.handler.bind(this));
+            } else if (value && value.constructor.name === 'Observable') {
+                value.subscribe(this.handler.bind(this));
             } else {
                 this.handler(value);
             }

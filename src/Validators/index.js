@@ -1,5 +1,6 @@
 export { Validator } from './Validator';
 export { AsyncValue } from './AsyncValue';
+export { EmailValue } from './EmailValue';
 export { RequiredValue } from './RequiredValue';
 export { DateValue } from './DateValue';
 export { EnumValue } from './EnumValue';
