@@ -1,7 +1,6 @@
 export { Validator } from './Validator';
-export { Observable } from 'rxjs/Observable';
 
-export class RequiredValue extends Validator {
+export class MatchesFieldValue extends Validator {
     get data() { return this._data; };
     set data(value) { this._data = value; }
 
@@ -10,16 +9,13 @@ export class RequiredValue extends Validator {
 
     constructor(dataList, requiredConfig, filename) {
         this.data = dataList[filename];
+        this.dataMatch = dataList[requiredConfig.fieldname];
         this.requiredConfig = requiredConfig;
     }
 
     doValidation() {
-        return new Observable((observer) => {
-            this.requiredConfig.asyncFunction(data, observer.next)
-        });
-    }
-
-    cleanup() {
-        this.requiredConfig.cleanup();
+        return this.data === this.dataMatch ? {
+            message: this.requiredConfig.message || 'Field must be number only.'
+        } : null;
     }
 }

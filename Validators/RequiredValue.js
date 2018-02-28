@@ -13,8 +13,8 @@ export class RequiredValue extends Validator {
     }
 
     doValidation() {
-        return this.data && this.requiredConfig.value ? {
-            message: this.requiredConfig.message
+        return !this.data && this.requiredConfig.value ? {
+            message: this.requiredConfig.message || 'Field is required.'
         } : null;
     }
 }
