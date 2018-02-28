@@ -31,6 +31,9 @@ export class ValidationIteration {
     }
 
     doValidate() {
+        if (this.validators.length === 0) {
+            this.callback(this.validationResult);
+        }
         this.validators.forEach(validator => { 
             const value = validator.doValidation();
             if (value && value.constructor.name === 'Promise') {
@@ -41,6 +44,7 @@ export class ValidationIteration {
                 this.handler(value);
             }
         });
+
     }
 
     cleanup() {
