@@ -16,7 +16,11 @@ export class AsyncValue extends Validator {
 
     doValidation() {
         return new Observable((observer) => {
-            this.config.asyncFunction(data, observer.next)
+            const next = observer.next;
+            this.config.asyncFunction(this.data, (data) => {
+                observer.next(data);
+            });
+            return this.config.cleanup;
         });
     }
 
