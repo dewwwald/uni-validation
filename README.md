@@ -14,8 +14,7 @@ npm i --save uni-validation
 
 ## Usage
 ```
-const Validation = require('uni-validation').Validation;
-const { AsyncValue, EmailValue } = require('uni-validation').Validators;
+const { AsyncValue, EmailValue, Validation } = require('uni-validation');
 
 let asyncTimer;
 const delayValue = 1000;
@@ -57,8 +56,8 @@ const validation = new Validation(validationSchema);
 const results = [];
 const obs$ = validation.validate(data);
 obs$.subscribe(validationResult => {
-    console.log('Validation result for' + validationResult.fieldname);
-    console.log(validationResult.isValid);
-    console.log(validationResult.errors);
+    console.log('Validation result for ' + validationResult.fieldname);
+    console.log('validation is valid ' + validationResult.isValid);
+    console.log('errors ' + validationResult.errors);
 });
 ```
