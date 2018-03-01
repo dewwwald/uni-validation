@@ -20,7 +20,7 @@ export class Validation {
 
     createRequiredValidator(data, reqValidationConfig) {
         const requiredConfig = (typeof reqValidationConfig === 'boolean'
-            ? { value: reqValidationConfig, message: 'Field is required.' }
+            ? { required: reqValidationConfig, message: 'Field is required.' }
             : reqValidationConfig);
         return new RequiredValue(data, requiredConfig);
     }

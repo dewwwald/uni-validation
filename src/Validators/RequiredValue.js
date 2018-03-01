@@ -14,7 +14,7 @@ export class RequiredValue extends Validator {
     }
 
     doValidation() {
-        return !this.data && this.config.value ? {
+        return this.data !== 0 && !this.data && this.config.required ? {
             message: this.config.message || 'Field is required.'
         } : null;
     }

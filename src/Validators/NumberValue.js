@@ -7,9 +7,9 @@ export class NumberValue extends Validator {
     get config() { return this._config; };
     set config(value) { this._config = value; }
 
-    constructor(dataList, config, filename) {
+    constructor(dataList, config, fieldname) {
         super();
-        this.data = dataList[filename];
+        this.data = dataList[fieldname];
         this.config = config;
     }
 
