@@ -14,8 +14,8 @@ npm i --save uni-validation
 
 ## Usage
 ```
-const Validation = require('./Validation').Validation;
-const { AsyncValue, EmailValue } = require('./Validators');
+const Validation = require('uni-validation').Validation;
+const { AsyncValue, EmailValue } = require('uni-validation').Validators;
 
 let asyncTimer;
 const delayValue = 1000;
