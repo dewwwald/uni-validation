@@ -2,7 +2,7 @@
 
 A universal validation library to check values in an object. Alpha release is simple validation object mapping to object key value. 
 
-#####todo
+##### todo
 - Implement length checking as part of validation objects. Either Validation base class or by chaining validators.
 - Option to make Observable emit the entire list of ValidationResults instead of 1 by 1
 - cancellable opperation, with the async nature it is possible to open 0 - 100 connections as the user is typing, it is best to offset the processing time and run then but also cancel the previous operation when the next one starts
