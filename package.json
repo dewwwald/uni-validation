@@ -1,6 +1,6 @@
 {
   "name": "uni-validation",
-  "version": "0.0.0-alpha.1",
+  "version": "0.0.0-alpha.2",
   "description": "Universal form validation that leverages the power of Observables (think async server side password strength checker)",
   "main": "build/index.js",
   "scripts": {
