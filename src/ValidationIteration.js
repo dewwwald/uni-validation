@@ -11,10 +11,11 @@ export class ValidationIteration {
     get counter() { return this._counter || 0; }
     set counter(value) { this._counter = value; }
 
-    constructor(validators, callback) {
+    constructor(validators, fieldname, callback) {
         this.validators = validators;
         this.callback = callback;
         this.validationResult = new ValidationResult();
+        this.validationResult.fieldname = fieldname;
     }
 
     handler(response) {

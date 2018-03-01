@@ -45,7 +45,7 @@ export class Validation {
             keys.forEach(key => {
                 const validationConfig = this.validationSchema[key];
                 const validators = this.createValidators(dataMap, validationConfig, key);
-                const _validationIteration = new ValidationIteration(validators, validationResult => {
+                const _validationIteration = new ValidationIteration(validators, key, validationResult => {
                     observer.next(validationResult);
                 });
                 this.validationIterations = [...this.validationIterations, _validationIteration];
