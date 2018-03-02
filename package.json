@@ -2,6 +2,7 @@
   "name": "uni-validation",
   "version": "0.0.0-alpha.4",
   "description": "Universal form validation that leverages the power of Observables (think async server side password strength checker)",
+  "url": "https://dewwwald/uni-validation",
   "main": "build/index.js",
   "scripts": {
     "build": "npx babel src --out-dir build",

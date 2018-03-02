@@ -8,7 +8,7 @@ export class Validation {
     get validationSchema() { return this._validationSchema || {}; };
     set validationSchema(value) { this._validationSchema = value; }
 
-    /** 
+    /**
      * @var Array<Observable<ValidationResults>>
      */
     get validationIterations() { return this._validationIterations || []; }
@@ -16,7 +16,7 @@ export class Validation {
 
     constructor(validationSchema = {}) {
         this.validationSchema = validationSchema;
-    }  
+    }
 
     createRequiredValidator(data, reqValidationConfig) {
         const requiredConfig = (typeof reqValidationConfig === 'boolean'
